@@ -1,12 +1,11 @@
-# Official [Cyber Range](http://joshmadakor.tech/cyber-range) Project
-
 # Vulnerability Management Program Implementation
 
-In this project, we simulate the implementation of a comprehensive vulnerability management program, from inception to completion.
+This project simulates the end-to-end implementation of a comprehensive vulnerability management program, guiding the organization from an initial state of no existing policies or practices to a fully operational and mature process.
 
-_**Inception State:**_ the organization has no existing policy or vulnerability management practices in place.
+_**Initial State:**_ The organization lacks a formal vulnerability management policy and has no established procedures in place.
 
-_**Completion State:**_ a formal policy is enacted, stakeholder buy-in is secured, and a full cycle of organization-wide vulnerability remediation is successfully completed.
+_**Final State:**_ A formal policy is developed and adopted, stakeholder alignment is achieved, and a complete cycle of organization-wide vulnerability identification, assessment, and remediation is successfully executed.
+
 
 ---
 
@@ -28,9 +27,6 @@ _**Completion State:**_ a formal policy is enacted, stakeholder buy-in is secure
 - [Mock Meeting: Initial Scan Permission (Server Team)](#step-4-mock-meeting-initial-scan-permission-server-team)
 - [Initial Scan of Server Team Assets](#step-5-initial-scan-of-server-team-assets)
 - [Vulnerability Assessment and Prioritization](#step-6-vulnerability-assessment-and-prioritization)
-- [Distributing Remediations to Remediation Teams](#step-7-distributing-remediations-to-remediation-teams)
-- [Mock Meeting: Post-Initial Discovery Scan (Server Team)](#step-8-mock-meeting-post-initial-discovery-scan-server-team)
-- [Mock CAB Meeting: Implementing Remediations](#step-9-mock-cab-meeting-implementing-remediations)
 - [Remediation Round 1: Outdated Wireshark Removal](#remediation-round-1-outdated-wireshark-removal)
 - [Remediation Round 2: Insecure Protocols & Ciphers](#remediation-round-2-insecure-protocols--ciphers)
 - [Remediation Round 3: Guest Account Group Membership](#remediation-round-3-guest-account-group-membership)
@@ -39,159 +35,152 @@ _**Completion State:**_ a formal policy is enacted, stakeholder buy-in is secure
 
 ---
 
-### Vulnerability Management Policy Draft Creation
+### Step 1) Vulnerability Management Policy Draft Creation
 
-This phase focuses on drafting a Vulnerability Management Policy as a starting point for stakeholder engagement. The initial draft outlines scope, responsibilities, and remediation timelines, and may be adjusted based on feedback from relevant departments to ensure practical implementation before final approval by upper management.  
-[Draft Policy](https://docs.google.com/document/d/1CLSWm1_9JL1oUqgyNNwtPXW6FzXJ7ddVnSAUQTyqC8I/edit?usp=drive_link)
+This phase centers on developing an initial draft of the Vulnerability Management Policy to initiate stakeholder engagement. The draft defines the policy’s scope, assigns roles and responsibilities, and establishes remediation timelines. It serves as a foundational document that is refined through feedback from key departments to ensure feasibility and alignment with operational needs before being finalized and approved by executive leadership.
+  
+[Draft Policy](https://docs.google.com/document/d/1fcSLMi8IxRXK2qVjd7zO94hvY71rS4hBZOhAFmTuBL4/edit?usp=sharing)
 
 ---
 
-### Step 2) Mock Meeting: Policy Buy-In (Stakeholders)
+### Step 2: Mock Meeting – Policy Buy-In (Stakeholders)
 
-In this phase, a meeting with the server team introduces the draft Vulnerability Management Policy and assesses their capability to meet remediation timelines. Feedback leads to adjustments, like extending the critical remediation window from 48 hours to one week, ensuring collaborative implementation.
 
-<a href='https://youtu.be/8g6uafc6LjE' target="_"><img width="600" alt="image" src="https://github.com/user-attachments/assets/549d21f4-26c2-412d-9117-d7b6835aedbf"></a>
+### Executive Summary of Meeting: Vulnerability Management Policy Discussion
+ 
+**Attendees:**  Vulnerability Management and Server Infrastructure Teams
+**Subject:** Review and Adjustment of Vulnerability Management Policy Draft
 
-[YouTube Video: Stakeholder Policy Buy-In Meeting](https://youtu.be/8g6uafc6LjE)
+In this phase, a brief and productive meeting was held with the server team to introduce and review the draft of the Vulnerability Management Policy. The draft was generally well-received; however, concerns were raised about the feasibility of meeting the proposed remediation timelines—particularly the 48-hour window for addressing critical vulnerabilities—due to current staffing constraints.
+
+To address this, it was agreed that the critical vulnerability remediation timeline would be extended to one week for most cases, with the 48-hour requirement reserved for urgent scenarios such as zero-day vulnerabilities. Additionally, a request for initial flexibility was made to support teams as they adapt to the new remediation and patching processes.
+
+It was confirmed that following final approval of the policy, a formal rollout will begin, with a 6-month transition period allotted for departments to fully integrate and operationalize the new procedures. This phased approach was welcomed, and the inclusive, collaborative decision-making process was positively acknowledged.
+
+#### Key Takeaways:
+- Critical remediation timeline adjusted from 48 hours to 1 week, with exceptions for severe threats.  
+- A 6-month grace period will be provided post-policy approval to allow teams to adjust.  
+- Strong emphasis on collaboration and shared accountability for implementation success.
+
 
 ---
 
 ### Step 3) Policy Finalization and Senior Leadership Sign-Off
 
 After gathering feedback from the server team, the policy is revised, addressing aggressive remediation timelines. With final approval from upper management, the policy now guides the program, ensuring compliance and reference for pushback resolution.  
-[Finalized Policy](https://docs.google.com/document/d/1rvueLX_71pOR8ldN9zVW9r_zLzDQxVsnSUtNar8ftdg/edit?usp=drive_link)
-<div style="text-align: center;">
-    <img src="https://github.com/user-attachments/assets/9afcdbc1-0493-4af2-9287-1cb9b8f59b40" alt="image" width="400">
-</div>
+[Finalized Policy](https://docs.google.com/document/d/1pARIctrh00TuRKwOVR_FcXKBQDLI-p62WmdhrAm-60E/edit?usp=sharing)
+
 
 ---
 
 ### Step 4) Mock Meeting: Initial Scan Permission (Server Team)
 
-The team collaborates with the server team to initiate scheduled credential scans. A compromise is reached to scan a single server first, monitoring resource impact, and using just-in-time Active Directory credentials for secure, controlled access.  
 
-<a href='https://youtu.be/lg068WA4SKM' target="_"><img width="600" alt="image" src="https://github.com/user-attachments/assets/31fe8d0f-636b-475b-8d5a-a2795c183f86"></a>
+### Executive Summary of Meeting: Initiation of Credentialed Vulnerability Scans
+  
+**Attendees:** Vulnerability Management and Server Infrastructure Teams  
+**Subject:** Planning for Scheduled Credentialed Scans
 
-[YouTube Video: Initial Discovery Scan](https://youtu.be/lg068WA4SKM)
+This meeting focused on launching credentialed vulnerability scans following the rollout of the Vulnerability Management Policy. Weekly scans are planned for approximately 200 servers, with each scan estimated to take 4–6 hours.
+
+Concerns were raised regarding system performance and the security of granting administrative access. The scanning team clarified that credentials are necessary to inspect registries, detect outdated software, and identify insecure protocols. To address concerns, both teams agreed on a phased approach:
+
+- A single-server test scan will be conducted to monitor resource usage.  
+- Temporary Active Directory credentials will be used, enabled only during scan windows and disabled immediately afterward—aligning with a just-in-time access model.
+
+Next steps include automating the temporary credential setup. Full-scale scanning will proceed based on the success of the test scan.
+
+#### Key Takeaways:
+- Weekly credentialed scans planned for ~200 servers; each lasting 4–6 hours.  
+- Test scan on one server to validate system impact.  
+- Temporary credentials will ensure secure, limited scan access.  
+- Automation of account provisioning is in progress.
+
 
 ---
 
 ### Step 5) Initial Scan of Server Team Assets
 
-In this phase, an insecure Windows Server is provisioned to simulate the server team's environment. After creating vulnerabilities, an authenticated scan is performed, and the results are exported for future remediation steps.  
+In this phase, a Windows Server is intentionally configured with security vulnerabilities to simulate the server team's environment. An authenticated vulnerability scan is then conducted, and the results are exported to support subsequent remediation efforts.  
 
-<img width="635" alt="image" src="https://github.com/user-attachments/assets/937cccbd-36bb-4445-97b9-e915085cda81" style="border: 2px solid black;">
-
-[Scan 1 - Initial Scan](https://drive.google.com/file/d/1RBPVj_azKJMwmRZ8QILlb4hxIjQU3wQ7/view?usp=drive_link)
-
-
+<img width="1270" height="1102" alt="image" src="https://github.com/user-attachments/assets/53018391-460e-42ac-9957-1a9a5d291797" />
 
 
 ---
 
 ### Step 6) Vulnerability Assessment and Prioritization
 
-We assessed vulnerabilities and established a remediation prioritization strategy based on ease of remediation and impact. The following priorities were set:
+Based on the chart below, we assessed identified vulnerabilities and developed a remediation prioritization strategy focused on ease of remediation and potential impact. The following priorities were established:
+
+<img width="1304" height="1086" alt="image" src="https://github.com/user-attachments/assets/25e9c2f7-d9e0-4e75-b7ef-18bed8833a3d" />
 
 1. Third Party Software Removal (Wireshark)
 2. Windows OS Secure Configuration (Protocols & Ciphers)
 3. Windows OS Secure Configuration (Guest Account Group Membership)
 4. Windows OS Updates
 
----
-
-### Step 7) Distributing Remediations to Remediation Teams
-
-The server team received remediation scripts and scan reports to address key vulnerabilities. This streamlined their efforts and prepared them for a follow-up review.  
-
-<img width="635" alt="image" src="https://github.com/user-attachments/assets/bbf9478f-e1d1-4898-846e-b510ec8c6f72">
-
-[Remediation Email](https://github.com/joshmadakor1/lognpacific-public/blob/main/misc/remediation-email.md)
 
 ---
 
-### Step 8) Mock Meeting: Post-Initial Discovery Scan (Server Team)
-
-The server team reviewed vulnerability scan results, identifying outdated software, insecure accounts, and deprecated protocols. The remediation packages were prepared for submission to the Change Control Board (CAB). 
-
-<a href="https://youtu.be/0tjjFewxSNw" target="_"><img width="600" src="https://github.com/user-attachments/assets/03027c66-5f7c-42d0-b6dd-09d053c040b1"/></a>
-
-[Meeting Video](https://youtu.be/0tjjFewxSNw)
-
----
-
-### Step 9) Mock CAB Meeting: Implementing Remediations
-
-The Change Control Board (CAB) reviewed and approved the plan to remove insecure protocols and cipher suites. The plan included a rollback script and a tiered deployment approach.  
-
-<a href="https://youtu.be/zOFPkTa9kY8" target="_"><img width="600" src="https://github.com/user-attachments/assets/07164e63-fbce-471a-b469-29a6d41b7bb8"/></a>
-
-[Meeting Video](https://youtu.be/zOFPkTa9kY8)
-
----
-### Step 10 ) Remediation Effort
+### Step 7) Remediation Effort
 
 #### Remediation Round 1: Outdated Wireshark Removal
 
-The server team used a PowerShell script to remove outdated Wireshark. A follow-up scan confirmed successful remediation.  
+A PowerShell script was utilized to remove the outdated installation of Wireshark. A subsequent scan verified that the vulnerability had been successfully remediated.
+  
 [Wireshark Removal Script](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/remediation-wireshark-uninstall.ps1)  
-
-<img width="634" alt="image" src="https://github.com/user-attachments/assets/7b4f9ab2-d230-4458-ac0f-c0ff070ae79a">
-
-[Scan 2 - Third Party Software Removal](https://drive.google.com/file/d/1UiwPPTtuSZKk02hiMyXf31pXUIeC5EWt/view?usp=drive_link)
+<img width="1268" height="942" alt="image" src="https://github.com/user-attachments/assets/d534f453-757b-48b7-8472-a111edac466f" />
 
 
 #### Remediation Round 2: Insecure Protocols & Ciphers
 
-The server team used PowerShell scripts to remediate insecure protocols and cipher suites. A follow-up scan verified successful remediation, and the results were saved for reference.  
+PowerShell scripts were used to remediate insecure protocols and cipher suites. A follow-up scan confirmed successful remediation, and the results were documented and saved for future reference.
+ 
 [PowerShell: Insecure Protocols Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-protocols.ps1)
 [PowerShell: Insecure Ciphers Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-cipher-suites.ps1)
-
-<img width="630" alt="image" src="https://github.com/user-attachments/assets/0e96120d-8ec9-4f76-8e42-79c752200010">
-
-[Scan 3 - Ciphersuites and Protocols](https://drive.google.com/file/d/1Qc6-ezQvwReCGUZNtnva0kCZo_-zW-Sm/view?usp=drive_link)
+<img width="1260" height="704" alt="image" src="https://github.com/user-attachments/assets/a4562899-805a-4b05-a862-9a91e802053a" />
 
 
 #### Remediation Round 3: Guest Account Group Membership
 
-The server team removed the guest account from the administrator group. A new scan confirmed remediation, and the results were exported for comparison.  
+The guest account was removed from the local Administrators group. A subsequent scan verified successful remediation, and the results were exported for comparison and documentation purposes.
+
 [PowerShell: Guest Account Group Membership Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-guest-local-administrators.ps1)  
 
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/870a3eac-3398-44fe-91c0-96f3c2578df4">
-
-[Scan 4 - Guest Account Group Removal](https://drive.google.com/file/d/1jVgikjfrV1YjOcL3QRT_oUB0Y82w22V7/view?usp=drive_link)
+<img width="1254" height="640" alt="image" src="https://github.com/user-attachments/assets/c1d14503-46f4-40a2-8203-0f431eb62f7a" />
 
 
 #### Remediation Round 4: Windows OS Updates
 
-Windows updates were re-enabled and applied until the system was fully up to date. A final scan verified the changes  
+Windows Update was re-enabled, and all pending updates were applied until the system reached full compliance. A final scan confirmed that the updates were successfully implemented.
 
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/870a3eac-3398-44fe-91c0-96f3c2578df4">
+<img width="1254" height="640" alt="image" src="https://github.com/user-attachments/assets/71c10629-3d53-4676-a5a0-4bd352e08ac7" />
 
-[Scan 5 - Post Windows Updates](https://drive.google.com/file/d/1tmDjeHl5uiGitRwWy8kFRi33q-nGi1Zt/view?usp=drive_link)
+
 
 ---
 
 ### First Cycle Remediation Effort Summary
 
-The remediation process reduced total vulnerabilities by 80%, from 30 to 6. Critical vulnerabilities were resolved by the second scan (100%), and high vulnerabilities dropped by 90%. Mediums were reduced by 76%. In an actual production environment, asset criticality would further guide future remediation efforts.  
+The remediation process resulted in an 80% overall reduction in vulnerabilities, decreasing from 30 to 6. All critical vulnerabilities (100%) were resolved by the second scan, while high-severity issues were reduced by 90% and medium-severity vulnerabilities by 76%. In a real-world production environment, remediation efforts would be further prioritized based on asset criticality to optimize risk reduction.
+ 
+<img width="2130" height="1320" alt="image" src="https://github.com/user-attachments/assets/628dbbe4-1270-4217-ab4c-e517af4211cc" />
 
-<img width="1920" alt="image" src="https://github.com/user-attachments/assets/51f0aae8-7f36-4d90-b29f-5257e57155f9">
-
-[Remediation Data](https://docs.google.com/spreadsheets/d/1FTtFfZYmFsNLU6pm8nTzsKyKE-d2ftXzX_DPwcnFNfA/edit?gid=0#gid=0)
 
 ---
 
 ### On-going Vulnerability Management (Maintenance Mode)
 
-After completing the initial remediation cycle, the vulnerability management program transitions into **Maintenance Mode**. This phase ensures that vulnerabilities continue to be managed proactively, keeping systems secure over time. Regular scans, continuous monitoring, and timely remediation are crucial components of this phase. (See [Finalized Policy](https://docs.google.com/document/d/1rvueLX_71pOR8ldN9zVW9r_zLzDQxVsnSUtNar8ftdg/edit?usp=drive_link) for scanning and remediation cadence requirements.)
+After completing the initial remediation cycle, the vulnerability management program enters **Maintenance Mode**—a phase focused on sustaining proactive vulnerability oversight to ensure long-term system security. This stage emphasizes regular scanning, continuous monitoring, and timely remediation to maintain a strong security posture.  
+(See [Finalized Policy](https://docs.google.com/document/d/1pARIctrh00TuRKwOVR_FcXKBQDLI-p62WmdhrAm-60E/edit?usp=sharing) for scanning and remediation cadence requirements.)
 
-Key activities in Maintenance Mode include:
-- **Scheduled Vulnerability Scans**: Perform regular scans (e.g., weekly or monthly) to detect new vulnerabilities as systems evolve.
-- **Patch Management**: Continuously apply security patches and updates, ensuring no critical vulnerabilities remain unpatched.
-- **Remediation Follow-ups**: Address newly identified vulnerabilities promptly, prioritizing based on risk and impact.
-- **Policy Review and Updates**: Periodically review the Vulnerability Management Policy to ensure it aligns with the latest security best practices and organizational needs.
-- **Audit and Compliance**: Conduct internal audits to ensure compliance with the vulnerability management policy and external regulations.
-- **Ongoing Communication with Stakeholders**: Maintain open communication with teams responsible for remediation, ensuring efficient coordination.
+#### Key Activities in Maintenance Mode:
+- **Scheduled Vulnerability Scans**: Conduct recurring scans (e.g., weekly or monthly) to identify new vulnerabilities introduced by system changes.
+- **Patch Management**: Apply security patches and updates regularly to ensure critical vulnerabilities are promptly addressed.
+- **Remediation Follow-ups**: Triage and resolve newly detected vulnerabilities based on risk severity and business impact.
+- **Policy Review and Updates**: Reassess the Vulnerability Management Policy periodically to reflect evolving best practices and organizational priorities.
+- **Audit and Compliance**: Perform internal audits to confirm adherence to the policy and compliance with applicable regulatory requirements.
+- **Stakeholder Communication**: Facilitate ongoing collaboration with remediation teams to support timely and coordinated responses.
 
-By maintaining an active vulnerability management process, organizations can stay ahead of emerging threats and ensure long-term security resilience.
+Maintaining an active and structured vulnerability management process in this phase helps organizations stay ahead of emerging threats and reinforces long-term resilience in their security operations.
+
