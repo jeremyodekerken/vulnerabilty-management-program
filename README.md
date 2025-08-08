@@ -128,7 +128,7 @@ Based on the chart below, we assessed identified vulnerabilities and developed a
 
 A PowerShell script was utilized to remove the outdated installation of Wireshark. A subsequent scan verified that the vulnerability had been successfully remediated.
   
-[Wireshark Removal Script](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/remediation-wireshark-uninstall.ps1)  
+[Wireshark Removal Script](https://github.com/jeremyodekerken/ps-scripts/blob/main/wireshark-uninstall.ps1)  
 <img width="1268" height="942" alt="image" src="https://github.com/user-attachments/assets/d534f453-757b-48b7-8472-a111edac466f" />
 
 
@@ -136,8 +136,8 @@ A PowerShell script was utilized to remove the outdated installation of Wireshar
 
 PowerShell scripts were used to remediate insecure protocols and cipher suites. A follow-up scan confirmed successful remediation, and the results were documented and saved for future reference.
  
-[PowerShell: Insecure Protocols Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-protocols.ps1)
-[PowerShell: Insecure Ciphers Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-cipher-suites.ps1)
+[PowerShell: Insecure Protocols Remediation](https://github.com/jeremyodekerken/ps-scripts/blob/main/toggle-protocols.ps1)
+[PowerShell: Insecure Ciphers Remediation](https://github.com/jeremyodekerken/ps-scripts/blob/main/toggle-cipher-suites.ps1)
 <img width="1260" height="704" alt="image" src="https://github.com/user-attachments/assets/a4562899-805a-4b05-a862-9a91e802053a" />
 
 
@@ -145,7 +145,7 @@ PowerShell scripts were used to remediate insecure protocols and cipher suites. 
 
 The guest account was removed from the local Administrators group. A subsequent scan verified successful remediation, and the results were exported for comparison and documentation purposes.
 
-[PowerShell: Guest Account Group Membership Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-guest-local-administrators.ps1)  
+[PowerShell: Guest Account Group Membership Remediation](https://github.com/jeremyodekerken/ps-scripts/blob/main/toggle-guest-local-admin.ps1)  
 
 <img width="1254" height="640" alt="image" src="https://github.com/user-attachments/assets/c1d14503-46f4-40a2-8203-0f431eb62f7a" />
 
